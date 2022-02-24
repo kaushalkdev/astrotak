@@ -29,10 +29,20 @@ dependencies:
   # dependemcy injection tool
   get_it: ^7.2.0
 
+  # for immutability
+  freezed: ^1.1.1
+
+  # for freezed annotations
+  freezed_annotation: ^1.1.0
+  
+
 dev_dependencies:
 
   # for linting purpose
   flutter_lints: ^1.0.0
+
+  # code generation
+  build_runner: ^2.1.7
 
   # testing libraby
   flutter_test:
