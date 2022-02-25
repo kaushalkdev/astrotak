@@ -4,7 +4,6 @@ import 'package:astrotak/src/features/ask_questions/domain/enitites/question_ent
 
 abstract class AskQuestionRepo {
   Future<Result<AppError, List<String>>> getCategories();
-  Future<Result<AppError, List<QuestionEntity>>> getIdeasToQuestion(
-      String category);
+  Future<Result<AppError, QuestionEntity>> getIdeasToQuestion(String category);
   Future<Result<AppError, String>> askQuestion(String question);
 }

@@ -7,8 +7,7 @@ import 'package:astrotak/src/features/ask_questions/domain/enitites/question_ent
 
 abstract class RemoteSource {
   Future<Result<AppError, List<String>>> getCategories();
-  Future<Result<AppError, List<QuestionEntity>>> getIdeasToQuestion(
-      String category);
+  Future<Result<AppError, QuestionEntity>> getIdeasToQuestion(String category);
   Future<Result<AppError, String>> askQuestion(String question);
 }
 
@@ -30,8 +29,7 @@ class RemoteSourceImplv1 implements RemoteSource {
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
         _questionData['data'] = _response.data['data'];
 
-        for (var element
-            in (_questionData['data'] as List<Map<String, dynamic>>)) {
+        for (var element in (_questionData['data'] as List)) {
           var _model = QuestionModel.fromJson(element);
 
           if (_model.suggestions.isNotEmpty) {
@@ -49,17 +47,20 @@ class RemoteSourceImplv1 implements RemoteSource {
   }
 
   @override
-  Future<Result<AppError, List<QuestionEntity>>> getIdeasToQuestion(
+  Future<Result<AppError, QuestionEntity>> getIdeasToQuestion(
       String category) async {
-    List<QuestionEntity> _questions = [];
+    QuestionModel? _question;
     try {
-      for (var element
-          in (_questionData['data'] as List<Map<String, dynamic>>)) {
-        var _model = QuestionModel.fromJson(element);
-
-        _questions.add(_model);
+      for (var element in (_questionData['data'] as List)) {
+        if (element['name'] == category.trim()) {
+          _question = QuestionModel.fromJson(element);
+        }
       }
-      return Result.success(_questions);
+      if (_question != null) {
+        return Result.success(_question);
+      } else {
+        return Result.failure(AppError(message: 'No ideas found'));
+      }
     } catch (e) {
       return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
     }

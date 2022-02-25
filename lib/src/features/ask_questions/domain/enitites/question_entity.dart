@@ -2,7 +2,7 @@ class QuestionEntity {
   int id;
   String name;
   String description;
-  int price;
+  num price;
   List<String> suggestions;
 
   QuestionEntity({

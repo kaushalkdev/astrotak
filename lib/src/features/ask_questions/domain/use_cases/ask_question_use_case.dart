@@ -12,8 +12,7 @@ class AskQuestionUseCase {
     return _repo.getCategories();
   }
 
-  Future<Result<AppError, List<QuestionEntity>>> getIdeasToQuestion(
-      String category) {
+  Future<Result<AppError, QuestionEntity>> getIdeasToQuestion(String category) {
     return _repo.getIdeasToQuestion(category);
   }
 

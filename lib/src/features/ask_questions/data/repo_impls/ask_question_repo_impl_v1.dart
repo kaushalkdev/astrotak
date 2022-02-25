@@ -20,8 +20,7 @@ class AskQuestionRepoImplv1 implements AskQuestionRepo {
   }
 
   @override
-  Future<Result<AppError, List<QuestionEntity>>> getIdeasToQuestion(
-      String category) {
+  Future<Result<AppError, QuestionEntity>> getIdeasToQuestion(String category) {
     return _remoteSource.getIdeasToQuestion(category);
   }
 }

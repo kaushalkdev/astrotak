@@ -5,7 +5,7 @@ class QuestionModel extends QuestionEntity {
     required int id,
     required String name,
     required String description,
-    required int price,
+    required num price,
     required List<String> suggestions,
   }) : super(
             id: id,
@@ -18,7 +18,7 @@ class QuestionModel extends QuestionEntity {
     return QuestionModel(
         id: json['id'],
         name: json['name'],
-        description: json['description'],
+        description: json['description'] ?? '',
         price: json['price'],
         suggestions: json['suggestions'].cast<String>());
   }

@@ -55,10 +55,8 @@ class RelativeModel extends Relative {
     data['fullName'] = fullName;
     data['gender'] = gender;
     data['dateAndTimeOfBirth'] = dateAndTimeOfBirth;
-
-    // data['birthDetails'] =  birthDetails.toJson();
-
-    // data['birthPlace'] =  birthPlace.toJson();
+    data['birthDetails'] = (birthDetails as BirthDetailsModel).toJson();
+    data['birthPlace'] = (birthPlace as BirthPlaceModel).toJson();
 
     return data;
   }

@@ -6,19 +6,20 @@ import 'package:astrotak/src/features/ask_questions/data/source/remote/remote_so
     as ask_question;
 import 'package:astrotak/src/features/ask_questions/domain/repo/ask_question_repo.dart';
 import 'package:astrotak/src/features/ask_questions/domain/use_cases/ask_question_use_case.dart';
+import 'package:astrotak/src/features/ask_questions/presentation/bloc/ask_question_bloc.dart';
 import 'package:astrotak/src/features/relatives/data/repo_impls/relatives_impl.dart';
 import 'package:astrotak/src/features/relatives/data/sources/remote/remote_source.dart'
     as relatives;
 import 'package:astrotak/src/features/relatives/domain/repos/relatives_repo.dart';
 
 import 'package:astrotak/src/features/relatives/domain/use_cases/relatives_use_case.dart';
-import 'package:astrotak/src/features/relatives/exports.dart';
+
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;
 
-void serviceLocator() {
+void initServiceLocator() {
   // init dio
   getIt.registerLazySingleton<Dio>(
       () => Dio(BaseOptions(baseUrl: Configs.i!.baseUrl)));
@@ -39,6 +40,9 @@ void serviceLocator() {
 // usecase init
   getIt.registerFactory<AskQuestionUseCase>(
       () => AskQuestionUseCase(getIt.get<AskQuestionRepo>()));
+
+  getIt.registerFactory<AskQuestionBloc>(
+      () => AskQuestionBloc(getIt.get<AskQuestionUseCase>()));
 
 //-------------------- Relatives ---------------------------
 
