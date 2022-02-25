@@ -15,21 +15,34 @@ class AskQuestion extends StatelessWidget {
       children: [
         _blueBar(AppString.walletBalance, AppString.addMoney),
         Expanded(
-            child: ListView(
-          addAutomaticKeepAlives: true,
-          children: [
-            _askAQuestion(),
-            _chooseCategory(),
-            _textInput(),
-            _ideasToAsk(),
-            _suggestions(),
-          ],
-        )),
-        _blueBar(
-            AppString.oneQuestionOn +
-                (context.watch<AskQuestionBloc>().selectedCategory ?? ""),
-            AppString.askNow),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                _askAQuestion(),
+                _chooseCategory(),
+                _textInput(),
+                _ideasToAsk(),
+                _suggestions(),
+              ],
+            ),
+          ),
+        ),
+        _bottomBar(),
       ],
+    );
+  }
+
+  Widget _bottomBar() {
+    return BlocBuilder<AskQuestionBloc, AskQuestionState>(
+      builder: (context, state) {
+        return Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          child: _blueBar(
+              AppString.oneQuestionOn +
+                  (context.watch<AskQuestionBloc>().selectedCategory ?? ""),
+              AppString.askNow),
+        );
+      },
     );
   }
 
@@ -81,10 +94,7 @@ class AskQuestion extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            AppString.chooseCategory,
-            style: _titleStyle(),
-          ),
+          Text(AppString.chooseCategory, style: _titleStyle()),
           _categoryBuilder(),
         ],
       ),
@@ -197,14 +207,22 @@ class AskQuestion extends StatelessWidget {
   }
 
   Widget _singleQuestion(String question, Function() ontap) {
-    return ListTile(
-      horizontalTitleGap: 0,
-      title: Text(question),
-      onTap: ontap,
-      leading: const Icon(
-        Icons.search,
-        color: Colors.deepOrange,
-      ),
+    return Column(
+      children: [
+        ListTile(
+          horizontalTitleGap: 0,
+          title: Text(question),
+          onTap: ontap,
+          leading: const Icon(
+            Icons.search,
+            color: Colors.deepOrange,
+          ),
+        ),
+        const Divider(
+          thickness: 1,
+          color: Colors.black38,
+        )
+      ],
     );
   }
 
