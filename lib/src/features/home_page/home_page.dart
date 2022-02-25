@@ -25,12 +25,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white12,
+        backgroundColor: Colors.white,
         title: _buildTitle(),
         elevation: 0,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         items: [
           _bottomItem(Assest.home, AppString.home),
           _bottomItem(Assest.talk, AppString.talk),
