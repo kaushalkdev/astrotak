@@ -12,16 +12,23 @@ class AskQuestionBloc extends Bloc<AskQuestionEvent, AskQuestionState> {
   String? selectedCategory;
   AskQuestionBloc(this._useCase) : super(const _Initial()) {
     on<AskQuestionEvent>((event, emit) async {
+      // fetching data from repo
       if (event is FetchCategory) {
         var response = await _useCase.getCategories();
         response.when(success: (list) async {
-          selectedCategory = list[0];
+          // instantiating selected list
+          selectedCategory = list.first;
           emit(CategoryLoaded(list));
         }, failure: (e) {
           emit(Error(e.message));
         });
-      } else if (event is SelectCategory) {
+      }
+      // if a new category is selected
+      else if (event is SelectCategory) {
+        // updating seleted category
         selectedCategory = event.category;
+
+        // getting questions from the repo
         var _response = await _useCase.getIdeasToQuestion(event.category);
 
         _response.when(
