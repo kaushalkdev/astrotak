@@ -10,18 +10,19 @@ part 'relatives_bloc.freezed.dart';
 
 class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
   final RelativesUserCase _userCase;
-  RelativesBloc(this._userCase) : super(const _Initial()) {
+  RelativesBloc(this._userCase) : super(const Initial()) {
     on<RelativesEvent>((event, emit) async {
       // getting initial value of realtives
       if (event is GetRelatives) {
+        emit(const Initial());
         var _getRelResp = await _userCase.getAll();
 
         _getRelResp.when(
           failure: (e) {
-            emit(Error(e.message));
+            emit(Error(e!.message));
           },
           success: (relatives) {
-            emit(RelativesLoaded(relatives));
+            emit(RelativesLoaded(relatives!));
           },
         );
       }
@@ -32,7 +33,7 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
 
         _addResp.when(
           failure: (e) {
-            emit(Error(e.message));
+            emit(Error(e!.message));
           },
           success: (_) {
             emit(const RelativeAdded());
@@ -46,7 +47,7 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
 
         _updateResp.when(
           failure: (e) {
-            emit(Error(e.message));
+            emit(Error(e!.message));
           },
           success: (_) {
             emit(const RelativeUpdated());
@@ -56,14 +57,15 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
 
       // deleting a relative
       else if (event is DeleteRelative) {
+        emit(const Initial());
         var _delResp = await _userCase.delete(event.uuid);
 
         _delResp.when(
-          failure: (e) {
-            emit(Error(e.message));
-          },
           success: (_) {
             emit(const RelativeDeleted());
+          },
+          failure: (e) {
+            emit(Error(e!.message));
           },
         );
       }
@@ -73,10 +75,10 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
         var _getLocResp = await _userCase.getLocation(event.location);
         _getLocResp.when(
           failure: (e) {
-            emit(Error(e.message));
+            emit(Error(e!.message));
           },
           success: (locs) {
-            emit(LoationLoaded(locs));
+            emit(LoationLoaded(locs!));
           },
         );
       }

@@ -17,10 +17,10 @@ class AskQuestionBloc extends Bloc<AskQuestionEvent, AskQuestionState> {
         var response = await _useCase.getCategories();
         response.when(success: (list) async {
           // instantiating selected list
-          selectedCategory = list.first;
+          selectedCategory = list!.first;
           emit(CategoryLoaded(list));
         }, failure: (e) {
-          emit(Error(e.message));
+          emit(Error(e!.message));
         });
       }
       // if a new category is selected
@@ -32,8 +32,8 @@ class AskQuestionBloc extends Bloc<AskQuestionEvent, AskQuestionState> {
         var _response = await _useCase.getIdeasToQuestion(event.category);
 
         _response.when(
-          failure: (e) => emit(Error(e.message)),
-          success: (p0) => emit(SelectedCategory(p0)),
+          failure: (e) => emit(Error(e!.message)),
+          success: (p0) => emit(SelectedCategory(p0!)),
         );
       }
     });

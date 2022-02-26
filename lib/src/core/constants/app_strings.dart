@@ -47,6 +47,24 @@ class AppString {
 
   static String orderHistory = 'Order History';
 
+  static String name = 'Name';
+
+  static String dob = 'DOB';
+
+  static String tob = 'TOB';
+
+  static String relation = 'Relation';
+
+  static String addProfile = '+Add New Profile';
+
+  static String noRelatives = 'No relatives';
+
+  static String no = 'No';
+
+  static String yes = 'Yes';
+
+  static String deleteText = 'Do you really want to delete?';
+
   //-----------------------------------------------------
 
 }

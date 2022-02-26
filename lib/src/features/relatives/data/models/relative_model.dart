@@ -28,7 +28,7 @@ class RelativeModel extends Relative {
             middleName: middleName,
             relationId: relationId);
 
-  RelativeModel fromJson(Map<String, dynamic> json) {
+  static RelativeModel fromJson(Map<String, dynamic> json) {
     return RelativeModel(
       birthDetails: BirthDetailsModel.fromJson(json['birthDetails']),
       birthPlace: BirthPlaceModel.fromJson(json['birthPlace']),

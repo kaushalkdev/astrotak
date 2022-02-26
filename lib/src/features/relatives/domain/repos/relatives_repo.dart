@@ -16,21 +16,21 @@ abstract class RelativesRepo {
   ///
   /// returns [Future] of type `Result`.
   ///
-  Future<Result<AppError, void>> add(Relative relative);
+  Future<Result<AppError, bool>> add(Relative relative);
 
   ///
   /// updates a relative to data source
   ///
   /// returns [Future] of type `Result`.
   ///
-  Future<Result<AppError, void>> update(Relative relative);
+  Future<Result<AppError, bool>> update(Relative relative);
 
   ///
   /// deletes a relative to data source
   ///
   /// returns [Future] of type `Result`.
   ///
-  Future<Result<AppError, void>> delete(String uuid);
+  Future<Result<AppError, bool>> delete(String uuid);
 
   ///
   /// gets a location from data source

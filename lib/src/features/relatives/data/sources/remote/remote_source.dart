@@ -10,9 +10,9 @@ import 'package:dio/dio.dart';
 
 abstract class RemoteSource {
   Future<Result<AppError, List<RelativeModel>>> getAll();
-  Future<Result<AppError, void>> add(RelativeModel relativeModel);
-  Future<Result<AppError, void>> update(RelativeModel relativeModel);
-  Future<Result<AppError, void>> delete(String uuid);
+  Future<Result<AppError, bool>> add(RelativeModel relativeModel);
+  Future<Result<AppError, bool>> update(RelativeModel relativeModel);
+  Future<Result<AppError, bool>> delete(String uuid);
   Future<Result<AppError, List<LocationModel>>> getLocation(String location);
 }
 
@@ -21,12 +21,12 @@ class RemoteSourceImplv1 implements RemoteSource {
 
   RemoteSourceImplv1(this._httpService);
   @override
-  Future<Result<AppError, void>> add(RelativeModel relativeModel) async {
+  Future<Result<AppError, bool>> add(RelativeModel relativeModel) async {
     try {
       var _response = await _httpService.postRequestWithOptions(
           AppApis.addRelative, relativeModel.toJson());
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
-        return Result.success();
+        return Result.success(true);
       } else {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
@@ -41,12 +41,12 @@ class RemoteSourceImplv1 implements RemoteSource {
   }
 
   @override
-  Future<Result<AppError, void>> delete(String uuid) async {
+  Future<Result<AppError, bool>> delete(String uuid) async {
     try {
-      var _response =
-          await _httpService.postRequestWithOptions(AppApis.deleteRelative, {});
+      var _response = await _httpService
+          .postRequestWithOptions(AppApis.deleteRelative + '/$uuid', {});
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
-        return Result.success();
+        return Result.success(true);
       } else {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
@@ -67,9 +67,14 @@ class RemoteSourceImplv1 implements RemoteSource {
       var _response =
           await _httpService.getRequestWithOptions(AppApis.allRelatives);
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
-        for (var element in (_response.data['data']['allRelatives'] as List)) {
-          _relatives.add(RelativeModel.fromJson(element));
+        // checking if there are any reletavies in data
+        if (_response.data.containsKey('data')) {
+          for (var element
+              in (_response.data['data']['allRelatives'] as List)) {
+            _relatives.add(RelativeModel.fromJson(element));
+          }
         }
+
         return Result.success(_relatives);
       } else {
         return Result.failure(AppError(
@@ -86,12 +91,12 @@ class RemoteSourceImplv1 implements RemoteSource {
   }
 
   @override
-  Future<Result<AppError, void>> update(RelativeModel relativeModel) async {
+  Future<Result<AppError, bool>> update(RelativeModel relativeModel) async {
     try {
       var _response = await _httpService.postRequestWithOptions(
           AppApis.deleteRelative, relativeModel.toJson());
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
-        return Result.success();
+        return Result.success(true);
       } else {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));

@@ -37,6 +37,9 @@ dependencies:
 
   # shimmer effect
   shimmer: ^2.0.0
+
+  # internationalization for date formatting 
+  intl: ^0.17.0
   
 
 dev_dependencies:

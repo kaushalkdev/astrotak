@@ -2,7 +2,7 @@ part of 'relatives_bloc.dart';
 
 @freezed
 class RelativesState with _$RelativesState {
-  const factory RelativesState.initial() = _Initial;
+  const factory RelativesState.initial() = Initial;
   const factory RelativesState.relativesLoaded(List<Relative> relatives) =
       RelativesLoaded;
   const factory RelativesState.relativeUpdated() = RelativeUpdated;

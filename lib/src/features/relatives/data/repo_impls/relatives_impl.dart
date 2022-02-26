@@ -12,12 +12,12 @@ class RelativeRepoImpl implements RelativesRepo {
   RelativeRepoImpl(this._remoteSource);
 
   @override
-  Future<Result<AppError, void>> add(Relative relative) {
+  Future<Result<AppError, bool>> add(Relative relative) {
     return _remoteSource.add(relative as RelativeModel);
   }
 
   @override
-  Future<Result<AppError, void>> delete(String uuid) {
+  Future<Result<AppError, bool>> delete(String uuid) {
     return _remoteSource.delete(uuid);
   }
 
@@ -27,7 +27,7 @@ class RelativeRepoImpl implements RelativesRepo {
   }
 
   @override
-  Future<Result<AppError, void>> update(Relative relative) {
+  Future<Result<AppError, bool>> update(Relative relative) {
     return _remoteSource.update(relative as RelativeModel);
   }
 

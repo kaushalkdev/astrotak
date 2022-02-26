@@ -860,8 +860,8 @@ abstract class GetLocation implements RelativesEvent {
 class _$RelativesStateTearOff {
   const _$RelativesStateTearOff();
 
-  _Initial initial() {
-    return const _Initial();
+  Initial initial() {
+    return const Initial();
   }
 
   RelativesLoaded relativesLoaded(List<Relative> relatives) {
@@ -936,7 +936,7 @@ mixin _$RelativesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -947,7 +947,7 @@ mixin _$RelativesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -958,7 +958,7 @@ mixin _$RelativesState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -988,25 +988,25 @@ class _$RelativesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class $InitialCopyWith<$Res> {
+  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
+      _$InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$RelativesStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class _$InitialCopyWithImpl<$Res> extends _$RelativesStateCopyWithImpl<$Res>
+    implements $InitialCopyWith<$Res> {
+  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
+      : super(_value, (v) => _then(v as Initial));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  Initial get _value => super._value as Initial;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$Initial implements Initial {
+  const _$Initial();
 
   @override
   String toString() {
@@ -1016,7 +1016,7 @@ class _$_Initial implements _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is Initial);
   }
 
   @override
@@ -1071,7 +1071,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1085,7 +1085,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1099,7 +1099,7 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1115,8 +1115,8 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements RelativesState {
-  const factory _Initial() = _$_Initial;
+abstract class Initial implements RelativesState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
@@ -1230,7 +1230,7 @@ class _$RelativesLoaded implements RelativesLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1244,7 +1244,7 @@ class _$RelativesLoaded implements RelativesLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1258,7 +1258,7 @@ class _$RelativesLoaded implements RelativesLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1370,7 +1370,7 @@ class _$RelativeUpdated implements RelativeUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1384,7 +1384,7 @@ class _$RelativeUpdated implements RelativeUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1398,7 +1398,7 @@ class _$RelativeUpdated implements RelativeUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1505,7 +1505,7 @@ class _$RelativeAdded implements RelativeAdded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1519,7 +1519,7 @@ class _$RelativeAdded implements RelativeAdded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1533,7 +1533,7 @@ class _$RelativeAdded implements RelativeAdded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1640,7 +1640,7 @@ class _$RelativeDeleted implements RelativeDeleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1654,7 +1654,7 @@ class _$RelativeDeleted implements RelativeDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1668,7 +1668,7 @@ class _$RelativeDeleted implements RelativeDeleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1799,7 +1799,7 @@ class _$LoationLoaded implements LoationLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1813,7 +1813,7 @@ class _$LoationLoaded implements LoationLoaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1827,7 +1827,7 @@ class _$LoationLoaded implements LoationLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1960,7 +1960,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(RelativesLoaded value) relativesLoaded,
     required TResult Function(RelativeUpdated value) relativeUpdated,
     required TResult Function(RelativeAdded value) relativeAdded,
@@ -1974,7 +1974,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,
@@ -1988,7 +1988,7 @@ class _$Error implements Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(RelativesLoaded value)? relativesLoaded,
     TResult Function(RelativeUpdated value)? relativeUpdated,
     TResult Function(RelativeAdded value)? relativeAdded,

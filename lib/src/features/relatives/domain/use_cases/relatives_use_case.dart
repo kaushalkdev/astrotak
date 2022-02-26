@@ -13,15 +13,15 @@ class RelativesUserCase {
     return _repo.getAll();
   }
 
-  Future<Result<AppError, void>> add(Relative relative) {
+  Future<Result<AppError, bool>> add(Relative relative) {
     return _repo.add(relative);
   }
 
-  Future<Result<AppError, void>> update(Relative relative) {
+  Future<Result<AppError, bool>> update(Relative relative) {
     return _repo.update(relative);
   }
 
-  Future<Result<AppError, void>> delete(String uuid) {
+  Future<Result<AppError, bool>> delete(String uuid) {
     return _repo.delete(uuid);
   }
 
