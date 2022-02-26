@@ -34,6 +34,9 @@ dependencies:
 
   # for freezed annotations
   freezed_annotation: ^1.1.0
+
+  # shimmer effect
+  shimmer: ^2.0.0
   
 
 dev_dependencies:
