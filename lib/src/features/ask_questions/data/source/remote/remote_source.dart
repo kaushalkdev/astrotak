@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:astrotak/src/core/apis/app_apis.dart';
 import 'package:astrotak/src/core/errors/app_errors.dart';
 import 'package:astrotak/src/core/models/result.dart';
 import 'package:astrotak/src/core/services/http/http_service.dart';
 import 'package:astrotak/src/features/ask_questions/data/models/question_model.dart';
 import 'package:astrotak/src/features/ask_questions/domain/enitites/question_entity.dart';
+import 'package:dio/dio.dart';
 
 abstract class RemoteSource {
   Future<Result<AppError, List<String>>> getCategories();
@@ -41,8 +44,12 @@ class RemoteSourceImplv1 implements RemoteSource {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 
@@ -61,8 +68,12 @@ class RemoteSourceImplv1 implements RemoteSource {
       } else {
         return Result.failure(AppError(message: 'No ideas found'));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 }

@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:astrotak/src/core/apis/app_apis.dart';
 import 'package:astrotak/src/core/errors/app_errors.dart';
 import 'package:astrotak/src/core/models/result.dart';
 import 'package:astrotak/src/core/services/http/http_service.dart';
 import 'package:astrotak/src/features/relatives/data/models/location_model.dart';
 import 'package:astrotak/src/features/relatives/data/models/relative_model.dart';
+import 'package:dio/dio.dart';
 
 abstract class RemoteSource {
   Future<Result<AppError, List<RelativeModel>>> getAll();
@@ -28,8 +31,12 @@ class RemoteSourceImplv1 implements RemoteSource {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 
@@ -44,24 +51,37 @@ class RemoteSourceImplv1 implements RemoteSource {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 
   @override
   Future<Result<AppError, List<RelativeModel>>> getAll() async {
+    List<RelativeModel> _relatives = [];
     try {
       var _response =
           await _httpService.getRequestWithOptions(AppApis.allRelatives);
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
-        return Result.success();
+        for (var element in (_response.data['data']['allRelatives'] as List)) {
+          _relatives.add(RelativeModel.fromJson(element));
+        }
+        return Result.success(_relatives);
       } else {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      if (e is SocketException) {}
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 
@@ -76,8 +96,12 @@ class RemoteSourceImplv1 implements RemoteSource {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 
@@ -97,8 +121,12 @@ class RemoteSourceImplv1 implements RemoteSource {
         return Result.failure(AppError(
             message: 'Error Occored', code: _response.data['httpStatusCode']));
       }
+    } on SocketException {
+      return Result.failure(AppError(message: 'Please Check Internet'));
+    } on DioError catch (e) {
+      return Result.failure(AppError(message: 'Error Occored ${e.message}'));
     } catch (e) {
-      return Result.failure(AppError(message: 'Error Occored ${e.toString()}'));
+      return Result.failure(AppError(message: 'Unknown error ${e.toString()}'));
     }
   }
 }
