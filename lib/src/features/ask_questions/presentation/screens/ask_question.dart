@@ -1,4 +1,5 @@
 import 'package:astrotak/src/core/constants/app_strings.dart';
+import 'package:astrotak/src/core/widgets/blue_bar.dart';
 import 'package:astrotak/src/features/ask_questions/domain/enitites/question_entity.dart';
 import 'package:astrotak/src/features/ask_questions/presentation/bloc/ask_question_bloc.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,12 @@ class AskQuestion extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _blueBar(AppString.walletBalance, AppString.addMoney),
+        BlueBar(
+          buttonText: AppString.addMoney,
+          title: AppString.walletBalance,
+          fontSize: 16,
+          weight: FontWeight.bold,
+        ),
         Expanded(
           child: SingleChildScrollView(
             child: Column(
@@ -35,13 +41,20 @@ class AskQuestion extends StatelessWidget {
   Widget _bottomBar() {
     return BlocBuilder<AskQuestionBloc, AskQuestionState>(
       builder: (context, state) {
-        return Container(
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-          child: _blueBar(
-              AppString.oneQuestionOn +
-                  (context.watch<AskQuestionBloc>().selectedCategory ?? ""),
-              AppString.askNow),
-        );
+        var _price = 0;
+        if (state is SelectedCategory) {
+          _price = state.selectedCategory.price.toInt();
+        }
+        return BlueBar(
+            margin: const EdgeInsets.symmetric(horizontal: 1),
+            radius: 10,
+            title: "₹" +
+                _price.toString() +
+                " ( " +
+                AppString.oneQuestionOn +
+                (context.watch<AskQuestionBloc>().selectedCategory ?? "") +
+                " ) ",
+            buttonText: AppString.askNow);
       },
     );
   }
@@ -56,36 +69,6 @@ class AskQuestion extends StatelessWidget {
           decoration: InputDecoration(
               hintText: AppString.hintText, border: const OutlineInputBorder()),
         ));
-  }
-
-  Widget _blueBar(String title, String buttonText) {
-    return Container(
-      height: 60,
-      color: Colors.indigo,
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 15.0, right: 15.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              ),
-            ),
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.white),
-                onPressed: () {},
-                child: Text(
-                  buttonText,
-                  style: const TextStyle(color: Colors.blue),
-                ))
-          ],
-        ),
-      ),
-    );
   }
 
   Widget _chooseCategory() {
@@ -107,6 +90,12 @@ class AskQuestion extends StatelessWidget {
         if (state is Error) {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text(state.message)));
+        }
+
+        if (state is CategoryLoaded) {
+          context
+              .read<AskQuestionBloc>()
+              .add(SelectCategory(state.category[0]));
         }
       },
       buildWhen: (previous, current) => (current is CategoryLoaded),
@@ -196,7 +185,9 @@ class AskQuestion extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(left: 10, right: 10),
       padding: const EdgeInsets.only(top: 10, bottom: 10),
-      color: Colors.deepOrange.shade100.withOpacity(0.5),
+      decoration: BoxDecoration(
+          color: Colors.deepOrange.shade100.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(5)),
       child: Column(
         children: [
           for (int i = 0; i < 7; i++)
@@ -209,13 +200,35 @@ class AskQuestion extends StatelessWidget {
   Widget _singleQuestion(String question, Function() ontap) {
     return Column(
       children: [
-        ListTile(
-          horizontalTitleGap: 0,
-          title: Text(question),
-          onTap: ontap,
-          leading: const Icon(
-            Icons.search,
-            color: Colors.deepOrange,
+        Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Row(
+            children: [
+              RotationTransition(
+                turns: const AlwaysStoppedAnimation(45 / 360),
+                child: Container(
+                  margin: const EdgeInsets.only(right: 15, top: 15),
+                  decoration: const BoxDecoration(
+                    color: Colors.deepOrange,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 5,
+                        spreadRadius: 1,
+                        color: Colors.grey,
+                      )
+                    ],
+                  ),
+                  height: 20,
+                  width: 20,
+                  child: const Icon(
+                    Icons.ac_unit,
+                    color: Colors.white,
+                    size: 15,
+                  ),
+                ),
+              ),
+              Flexible(child: Text(question)),
+            ],
           ),
         ),
         const Divider(
@@ -242,10 +255,12 @@ class AskQuestion extends StatelessWidget {
       children: [
         const Icon(Icons.ac_unit, color: Colors.deepOrange, size: 10),
         const SizedBox(width: 5),
-        Text(
-          seekAccurate3,
-          style: const TextStyle(
-            color: Colors.deepOrange,
+        Flexible(
+          child: Text(
+            seekAccurate3,
+            style: const TextStyle(
+              color: Colors.deepOrange,
+            ),
           ),
         ),
       ],

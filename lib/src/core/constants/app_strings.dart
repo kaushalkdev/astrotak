@@ -31,7 +31,7 @@ class AppString {
 
   static String ideastoAsk = 'Ideas what to Ask (Select Any)';
 
-  static String walletBalance = 'Wallet Balance : 0';
+  static String walletBalance = 'Wallet Balance : ₹ 0';
 
   static String addMoney = 'Add Money';
 
