@@ -16,7 +16,7 @@ class AstroApp extends StatelessWidget {
           BlocProvider<AskQuestionBloc>(
             create: (context) => getIt.get<AskQuestionBloc>()
               ..add(const AskQuestionEvent.fetchCategory()),
-          )
+          ),
         ],
         child: const MyHomePage(),
       ),

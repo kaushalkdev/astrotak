@@ -13,6 +13,7 @@ import 'package:astrotak/src/features/relatives/data/sources/remote/remote_sourc
 import 'package:astrotak/src/features/relatives/domain/repos/relatives_repo.dart';
 
 import 'package:astrotak/src/features/relatives/domain/use_cases/relatives_use_case.dart';
+import 'package:astrotak/src/features/relatives/presentation/bloc/relatives_bloc.dart';
 
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -57,4 +58,7 @@ void initServiceLocator() {
   // use case init
   getIt.registerFactory<RelativesUserCase>(
       () => RelativesUserCase(getIt.get<RelativesRepo>()));
+
+  getIt.registerLazySingleton<RelativesBloc>(
+      () => RelativesBloc(getIt.get<RelativesUserCase>()));
 }
