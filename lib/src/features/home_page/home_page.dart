@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const Relatives(),
+                  builder: (context) => Relatives(),
                 ));
           },
           child: const Icon(

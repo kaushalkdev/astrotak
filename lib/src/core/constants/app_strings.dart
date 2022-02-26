@@ -41,6 +41,12 @@ class AppString {
 
   static String oneQuestionOn = '1 Question on ';
 
+  static String logOut = 'Logout';
+
+  static String myProfile = 'My Profile';
+
+  static String orderHistory = 'Order History';
+
   //-----------------------------------------------------
 
 }
