@@ -18,24 +18,32 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$RelativesEventTearOff {
   const _$RelativesEventTearOff();
 
-  _GetRelatives getRelatives() {
-    return const _GetRelatives();
+  GetRelatives getRelatives() {
+    return const GetRelatives();
   }
 
-  _UpdateReltive updateRelative() {
-    return const _UpdateReltive();
+  UpdateReltive updateRelative(Relative relative) {
+    return UpdateReltive(
+      relative,
+    );
   }
 
-  _AddRelative addRelatives() {
-    return const _AddRelative();
+  AddRelative addRelatives(Relative relative) {
+    return AddRelative(
+      relative,
+    );
   }
 
-  _DeleteRelative deleteRelatives() {
-    return const _DeleteRelative();
+  DeleteRelative deleteRelatives(String uuid) {
+    return DeleteRelative(
+      uuid,
+    );
   }
 
-  _GetLocation getLocation() {
-    return const _GetLocation();
+  GetLocation getLocation(String location) {
+    return GetLocation(
+      location,
+    );
   }
 }
 
@@ -47,56 +55,56 @@ mixin _$RelativesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRelatives,
-    required TResult Function() updateRelative,
-    required TResult Function() addRelatives,
-    required TResult Function() deleteRelatives,
-    required TResult Function() getLocation,
+    required TResult Function(Relative relative) updateRelative,
+    required TResult Function(Relative relative) addRelatives,
+    required TResult Function(String uuid) deleteRelatives,
+    required TResult Function(String location) getLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetRelatives value) getRelatives,
-    required TResult Function(_UpdateReltive value) updateRelative,
-    required TResult Function(_AddRelative value) addRelatives,
-    required TResult Function(_DeleteRelative value) deleteRelatives,
-    required TResult Function(_GetLocation value) getLocation,
+    required TResult Function(GetRelatives value) getRelatives,
+    required TResult Function(UpdateReltive value) updateRelative,
+    required TResult Function(AddRelative value) addRelatives,
+    required TResult Function(DeleteRelative value) deleteRelatives,
+    required TResult Function(GetLocation value) getLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,28 +128,28 @@ class _$RelativesEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GetRelativesCopyWith<$Res> {
-  factory _$GetRelativesCopyWith(
-          _GetRelatives value, $Res Function(_GetRelatives) then) =
-      __$GetRelativesCopyWithImpl<$Res>;
+abstract class $GetRelativesCopyWith<$Res> {
+  factory $GetRelativesCopyWith(
+          GetRelatives value, $Res Function(GetRelatives) then) =
+      _$GetRelativesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GetRelativesCopyWithImpl<$Res>
+class _$GetRelativesCopyWithImpl<$Res>
     extends _$RelativesEventCopyWithImpl<$Res>
-    implements _$GetRelativesCopyWith<$Res> {
-  __$GetRelativesCopyWithImpl(
-      _GetRelatives _value, $Res Function(_GetRelatives) _then)
-      : super(_value, (v) => _then(v as _GetRelatives));
+    implements $GetRelativesCopyWith<$Res> {
+  _$GetRelativesCopyWithImpl(
+      GetRelatives _value, $Res Function(GetRelatives) _then)
+      : super(_value, (v) => _then(v as GetRelatives));
 
   @override
-  _GetRelatives get _value => super._value as _GetRelatives;
+  GetRelatives get _value => super._value as GetRelatives;
 }
 
 /// @nodoc
 
-class _$_GetRelatives implements _GetRelatives {
-  const _$_GetRelatives();
+class _$GetRelatives implements GetRelatives {
+  const _$GetRelatives();
 
   @override
   String toString() {
@@ -151,7 +159,7 @@ class _$_GetRelatives implements _GetRelatives {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetRelatives);
+        (other.runtimeType == runtimeType && other is GetRelatives);
   }
 
   @override
@@ -161,10 +169,10 @@ class _$_GetRelatives implements _GetRelatives {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRelatives,
-    required TResult Function() updateRelative,
-    required TResult Function() addRelatives,
-    required TResult Function() deleteRelatives,
-    required TResult Function() getLocation,
+    required TResult Function(Relative relative) updateRelative,
+    required TResult Function(Relative relative) addRelatives,
+    required TResult Function(String uuid) deleteRelatives,
+    required TResult Function(String location) getLocation,
   }) {
     return getRelatives();
   }
@@ -173,10 +181,10 @@ class _$_GetRelatives implements _GetRelatives {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
   }) {
     return getRelatives?.call();
   }
@@ -185,10 +193,10 @@ class _$_GetRelatives implements _GetRelatives {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
     required TResult orElse(),
   }) {
     if (getRelatives != null) {
@@ -200,11 +208,11 @@ class _$_GetRelatives implements _GetRelatives {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetRelatives value) getRelatives,
-    required TResult Function(_UpdateReltive value) updateRelative,
-    required TResult Function(_AddRelative value) addRelatives,
-    required TResult Function(_DeleteRelative value) deleteRelatives,
-    required TResult Function(_GetLocation value) getLocation,
+    required TResult Function(GetRelatives value) getRelatives,
+    required TResult Function(UpdateReltive value) updateRelative,
+    required TResult Function(AddRelative value) addRelatives,
+    required TResult Function(DeleteRelative value) deleteRelatives,
+    required TResult Function(GetLocation value) getLocation,
   }) {
     return getRelatives(this);
   }
@@ -212,11 +220,11 @@ class _$_GetRelatives implements _GetRelatives {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
   }) {
     return getRelatives?.call(this);
   }
@@ -224,11 +232,11 @@ class _$_GetRelatives implements _GetRelatives {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
     required TResult orElse(),
   }) {
     if (getRelatives != null) {
@@ -238,84 +246,108 @@ class _$_GetRelatives implements _GetRelatives {
   }
 }
 
-abstract class _GetRelatives implements RelativesEvent {
-  const factory _GetRelatives() = _$_GetRelatives;
+abstract class GetRelatives implements RelativesEvent {
+  const factory GetRelatives() = _$GetRelatives;
 }
 
 /// @nodoc
-abstract class _$UpdateReltiveCopyWith<$Res> {
-  factory _$UpdateReltiveCopyWith(
-          _UpdateReltive value, $Res Function(_UpdateReltive) then) =
-      __$UpdateReltiveCopyWithImpl<$Res>;
+abstract class $UpdateReltiveCopyWith<$Res> {
+  factory $UpdateReltiveCopyWith(
+          UpdateReltive value, $Res Function(UpdateReltive) then) =
+      _$UpdateReltiveCopyWithImpl<$Res>;
+  $Res call({Relative relative});
 }
 
 /// @nodoc
-class __$UpdateReltiveCopyWithImpl<$Res>
+class _$UpdateReltiveCopyWithImpl<$Res>
     extends _$RelativesEventCopyWithImpl<$Res>
-    implements _$UpdateReltiveCopyWith<$Res> {
-  __$UpdateReltiveCopyWithImpl(
-      _UpdateReltive _value, $Res Function(_UpdateReltive) _then)
-      : super(_value, (v) => _then(v as _UpdateReltive));
+    implements $UpdateReltiveCopyWith<$Res> {
+  _$UpdateReltiveCopyWithImpl(
+      UpdateReltive _value, $Res Function(UpdateReltive) _then)
+      : super(_value, (v) => _then(v as UpdateReltive));
 
   @override
-  _UpdateReltive get _value => super._value as _UpdateReltive;
+  UpdateReltive get _value => super._value as UpdateReltive;
+
+  @override
+  $Res call({
+    Object? relative = freezed,
+  }) {
+    return _then(UpdateReltive(
+      relative == freezed
+          ? _value.relative
+          : relative // ignore: cast_nullable_to_non_nullable
+              as Relative,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_UpdateReltive implements _UpdateReltive {
-  const _$_UpdateReltive();
+class _$UpdateReltive implements UpdateReltive {
+  const _$UpdateReltive(this.relative);
+
+  @override
+  final Relative relative;
 
   @override
   String toString() {
-    return 'RelativesEvent.updateRelative()';
+    return 'RelativesEvent.updateRelative(relative: $relative)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UpdateReltive);
+        (other.runtimeType == runtimeType &&
+            other is UpdateReltive &&
+            const DeepCollectionEquality().equals(other.relative, relative));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(relative));
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateReltiveCopyWith<UpdateReltive> get copyWith =>
+      _$UpdateReltiveCopyWithImpl<UpdateReltive>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRelatives,
-    required TResult Function() updateRelative,
-    required TResult Function() addRelatives,
-    required TResult Function() deleteRelatives,
-    required TResult Function() getLocation,
+    required TResult Function(Relative relative) updateRelative,
+    required TResult Function(Relative relative) addRelatives,
+    required TResult Function(String uuid) deleteRelatives,
+    required TResult Function(String location) getLocation,
   }) {
-    return updateRelative();
+    return updateRelative(relative);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
   }) {
-    return updateRelative?.call();
+    return updateRelative?.call(relative);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
     required TResult orElse(),
   }) {
     if (updateRelative != null) {
-      return updateRelative();
+      return updateRelative(relative);
     }
     return orElse();
   }
@@ -323,11 +355,11 @@ class _$_UpdateReltive implements _UpdateReltive {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetRelatives value) getRelatives,
-    required TResult Function(_UpdateReltive value) updateRelative,
-    required TResult Function(_AddRelative value) addRelatives,
-    required TResult Function(_DeleteRelative value) deleteRelatives,
-    required TResult Function(_GetLocation value) getLocation,
+    required TResult Function(GetRelatives value) getRelatives,
+    required TResult Function(UpdateReltive value) updateRelative,
+    required TResult Function(AddRelative value) addRelatives,
+    required TResult Function(DeleteRelative value) deleteRelatives,
+    required TResult Function(GetLocation value) getLocation,
   }) {
     return updateRelative(this);
   }
@@ -335,11 +367,11 @@ class _$_UpdateReltive implements _UpdateReltive {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
   }) {
     return updateRelative?.call(this);
   }
@@ -347,11 +379,11 @@ class _$_UpdateReltive implements _UpdateReltive {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
     required TResult orElse(),
   }) {
     if (updateRelative != null) {
@@ -361,84 +393,112 @@ class _$_UpdateReltive implements _UpdateReltive {
   }
 }
 
-abstract class _UpdateReltive implements RelativesEvent {
-  const factory _UpdateReltive() = _$_UpdateReltive;
+abstract class UpdateReltive implements RelativesEvent {
+  const factory UpdateReltive(Relative relative) = _$UpdateReltive;
+
+  Relative get relative;
+  @JsonKey(ignore: true)
+  $UpdateReltiveCopyWith<UpdateReltive> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$AddRelativeCopyWith<$Res> {
-  factory _$AddRelativeCopyWith(
-          _AddRelative value, $Res Function(_AddRelative) then) =
-      __$AddRelativeCopyWithImpl<$Res>;
+abstract class $AddRelativeCopyWith<$Res> {
+  factory $AddRelativeCopyWith(
+          AddRelative value, $Res Function(AddRelative) then) =
+      _$AddRelativeCopyWithImpl<$Res>;
+  $Res call({Relative relative});
 }
 
 /// @nodoc
-class __$AddRelativeCopyWithImpl<$Res>
-    extends _$RelativesEventCopyWithImpl<$Res>
-    implements _$AddRelativeCopyWith<$Res> {
-  __$AddRelativeCopyWithImpl(
-      _AddRelative _value, $Res Function(_AddRelative) _then)
-      : super(_value, (v) => _then(v as _AddRelative));
+class _$AddRelativeCopyWithImpl<$Res> extends _$RelativesEventCopyWithImpl<$Res>
+    implements $AddRelativeCopyWith<$Res> {
+  _$AddRelativeCopyWithImpl(
+      AddRelative _value, $Res Function(AddRelative) _then)
+      : super(_value, (v) => _then(v as AddRelative));
 
   @override
-  _AddRelative get _value => super._value as _AddRelative;
+  AddRelative get _value => super._value as AddRelative;
+
+  @override
+  $Res call({
+    Object? relative = freezed,
+  }) {
+    return _then(AddRelative(
+      relative == freezed
+          ? _value.relative
+          : relative // ignore: cast_nullable_to_non_nullable
+              as Relative,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_AddRelative implements _AddRelative {
-  const _$_AddRelative();
+class _$AddRelative implements AddRelative {
+  const _$AddRelative(this.relative);
+
+  @override
+  final Relative relative;
 
   @override
   String toString() {
-    return 'RelativesEvent.addRelatives()';
+    return 'RelativesEvent.addRelatives(relative: $relative)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _AddRelative);
+        (other.runtimeType == runtimeType &&
+            other is AddRelative &&
+            const DeepCollectionEquality().equals(other.relative, relative));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(relative));
+
+  @JsonKey(ignore: true)
+  @override
+  $AddRelativeCopyWith<AddRelative> get copyWith =>
+      _$AddRelativeCopyWithImpl<AddRelative>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRelatives,
-    required TResult Function() updateRelative,
-    required TResult Function() addRelatives,
-    required TResult Function() deleteRelatives,
-    required TResult Function() getLocation,
+    required TResult Function(Relative relative) updateRelative,
+    required TResult Function(Relative relative) addRelatives,
+    required TResult Function(String uuid) deleteRelatives,
+    required TResult Function(String location) getLocation,
   }) {
-    return addRelatives();
+    return addRelatives(relative);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
   }) {
-    return addRelatives?.call();
+    return addRelatives?.call(relative);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
     required TResult orElse(),
   }) {
     if (addRelatives != null) {
-      return addRelatives();
+      return addRelatives(relative);
     }
     return orElse();
   }
@@ -446,11 +506,11 @@ class _$_AddRelative implements _AddRelative {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetRelatives value) getRelatives,
-    required TResult Function(_UpdateReltive value) updateRelative,
-    required TResult Function(_AddRelative value) addRelatives,
-    required TResult Function(_DeleteRelative value) deleteRelatives,
-    required TResult Function(_GetLocation value) getLocation,
+    required TResult Function(GetRelatives value) getRelatives,
+    required TResult Function(UpdateReltive value) updateRelative,
+    required TResult Function(AddRelative value) addRelatives,
+    required TResult Function(DeleteRelative value) deleteRelatives,
+    required TResult Function(GetLocation value) getLocation,
   }) {
     return addRelatives(this);
   }
@@ -458,11 +518,11 @@ class _$_AddRelative implements _AddRelative {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
   }) {
     return addRelatives?.call(this);
   }
@@ -470,11 +530,11 @@ class _$_AddRelative implements _AddRelative {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
     required TResult orElse(),
   }) {
     if (addRelatives != null) {
@@ -484,84 +544,113 @@ class _$_AddRelative implements _AddRelative {
   }
 }
 
-abstract class _AddRelative implements RelativesEvent {
-  const factory _AddRelative() = _$_AddRelative;
+abstract class AddRelative implements RelativesEvent {
+  const factory AddRelative(Relative relative) = _$AddRelative;
+
+  Relative get relative;
+  @JsonKey(ignore: true)
+  $AddRelativeCopyWith<AddRelative> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteRelativeCopyWith<$Res> {
-  factory _$DeleteRelativeCopyWith(
-          _DeleteRelative value, $Res Function(_DeleteRelative) then) =
-      __$DeleteRelativeCopyWithImpl<$Res>;
+abstract class $DeleteRelativeCopyWith<$Res> {
+  factory $DeleteRelativeCopyWith(
+          DeleteRelative value, $Res Function(DeleteRelative) then) =
+      _$DeleteRelativeCopyWithImpl<$Res>;
+  $Res call({String uuid});
 }
 
 /// @nodoc
-class __$DeleteRelativeCopyWithImpl<$Res>
+class _$DeleteRelativeCopyWithImpl<$Res>
     extends _$RelativesEventCopyWithImpl<$Res>
-    implements _$DeleteRelativeCopyWith<$Res> {
-  __$DeleteRelativeCopyWithImpl(
-      _DeleteRelative _value, $Res Function(_DeleteRelative) _then)
-      : super(_value, (v) => _then(v as _DeleteRelative));
+    implements $DeleteRelativeCopyWith<$Res> {
+  _$DeleteRelativeCopyWithImpl(
+      DeleteRelative _value, $Res Function(DeleteRelative) _then)
+      : super(_value, (v) => _then(v as DeleteRelative));
 
   @override
-  _DeleteRelative get _value => super._value as _DeleteRelative;
+  DeleteRelative get _value => super._value as DeleteRelative;
+
+  @override
+  $Res call({
+    Object? uuid = freezed,
+  }) {
+    return _then(DeleteRelative(
+      uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_DeleteRelative implements _DeleteRelative {
-  const _$_DeleteRelative();
+class _$DeleteRelative implements DeleteRelative {
+  const _$DeleteRelative(this.uuid);
+
+  @override
+  final String uuid;
 
   @override
   String toString() {
-    return 'RelativesEvent.deleteRelatives()';
+    return 'RelativesEvent.deleteRelatives(uuid: $uuid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DeleteRelative);
+        (other.runtimeType == runtimeType &&
+            other is DeleteRelative &&
+            const DeepCollectionEquality().equals(other.uuid, uuid));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(uuid));
+
+  @JsonKey(ignore: true)
+  @override
+  $DeleteRelativeCopyWith<DeleteRelative> get copyWith =>
+      _$DeleteRelativeCopyWithImpl<DeleteRelative>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRelatives,
-    required TResult Function() updateRelative,
-    required TResult Function() addRelatives,
-    required TResult Function() deleteRelatives,
-    required TResult Function() getLocation,
+    required TResult Function(Relative relative) updateRelative,
+    required TResult Function(Relative relative) addRelatives,
+    required TResult Function(String uuid) deleteRelatives,
+    required TResult Function(String location) getLocation,
   }) {
-    return deleteRelatives();
+    return deleteRelatives(uuid);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
   }) {
-    return deleteRelatives?.call();
+    return deleteRelatives?.call(uuid);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
     required TResult orElse(),
   }) {
     if (deleteRelatives != null) {
-      return deleteRelatives();
+      return deleteRelatives(uuid);
     }
     return orElse();
   }
@@ -569,11 +658,11 @@ class _$_DeleteRelative implements _DeleteRelative {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetRelatives value) getRelatives,
-    required TResult Function(_UpdateReltive value) updateRelative,
-    required TResult Function(_AddRelative value) addRelatives,
-    required TResult Function(_DeleteRelative value) deleteRelatives,
-    required TResult Function(_GetLocation value) getLocation,
+    required TResult Function(GetRelatives value) getRelatives,
+    required TResult Function(UpdateReltive value) updateRelative,
+    required TResult Function(AddRelative value) addRelatives,
+    required TResult Function(DeleteRelative value) deleteRelatives,
+    required TResult Function(GetLocation value) getLocation,
   }) {
     return deleteRelatives(this);
   }
@@ -581,11 +670,11 @@ class _$_DeleteRelative implements _DeleteRelative {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
   }) {
     return deleteRelatives?.call(this);
   }
@@ -593,11 +682,11 @@ class _$_DeleteRelative implements _DeleteRelative {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
     required TResult orElse(),
   }) {
     if (deleteRelatives != null) {
@@ -607,84 +696,112 @@ class _$_DeleteRelative implements _DeleteRelative {
   }
 }
 
-abstract class _DeleteRelative implements RelativesEvent {
-  const factory _DeleteRelative() = _$_DeleteRelative;
+abstract class DeleteRelative implements RelativesEvent {
+  const factory DeleteRelative(String uuid) = _$DeleteRelative;
+
+  String get uuid;
+  @JsonKey(ignore: true)
+  $DeleteRelativeCopyWith<DeleteRelative> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GetLocationCopyWith<$Res> {
-  factory _$GetLocationCopyWith(
-          _GetLocation value, $Res Function(_GetLocation) then) =
-      __$GetLocationCopyWithImpl<$Res>;
+abstract class $GetLocationCopyWith<$Res> {
+  factory $GetLocationCopyWith(
+          GetLocation value, $Res Function(GetLocation) then) =
+      _$GetLocationCopyWithImpl<$Res>;
+  $Res call({String location});
 }
 
 /// @nodoc
-class __$GetLocationCopyWithImpl<$Res>
-    extends _$RelativesEventCopyWithImpl<$Res>
-    implements _$GetLocationCopyWith<$Res> {
-  __$GetLocationCopyWithImpl(
-      _GetLocation _value, $Res Function(_GetLocation) _then)
-      : super(_value, (v) => _then(v as _GetLocation));
+class _$GetLocationCopyWithImpl<$Res> extends _$RelativesEventCopyWithImpl<$Res>
+    implements $GetLocationCopyWith<$Res> {
+  _$GetLocationCopyWithImpl(
+      GetLocation _value, $Res Function(GetLocation) _then)
+      : super(_value, (v) => _then(v as GetLocation));
 
   @override
-  _GetLocation get _value => super._value as _GetLocation;
+  GetLocation get _value => super._value as GetLocation;
+
+  @override
+  $Res call({
+    Object? location = freezed,
+  }) {
+    return _then(GetLocation(
+      location == freezed
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_GetLocation implements _GetLocation {
-  const _$_GetLocation();
+class _$GetLocation implements GetLocation {
+  const _$GetLocation(this.location);
+
+  @override
+  final String location;
 
   @override
   String toString() {
-    return 'RelativesEvent.getLocation()';
+    return 'RelativesEvent.getLocation(location: $location)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GetLocation);
+        (other.runtimeType == runtimeType &&
+            other is GetLocation &&
+            const DeepCollectionEquality().equals(other.location, location));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(location));
+
+  @JsonKey(ignore: true)
+  @override
+  $GetLocationCopyWith<GetLocation> get copyWith =>
+      _$GetLocationCopyWithImpl<GetLocation>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getRelatives,
-    required TResult Function() updateRelative,
-    required TResult Function() addRelatives,
-    required TResult Function() deleteRelatives,
-    required TResult Function() getLocation,
+    required TResult Function(Relative relative) updateRelative,
+    required TResult Function(Relative relative) addRelatives,
+    required TResult Function(String uuid) deleteRelatives,
+    required TResult Function(String location) getLocation,
   }) {
-    return getLocation();
+    return getLocation(location);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
   }) {
-    return getLocation?.call();
+    return getLocation?.call(location);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getRelatives,
-    TResult Function()? updateRelative,
-    TResult Function()? addRelatives,
-    TResult Function()? deleteRelatives,
-    TResult Function()? getLocation,
+    TResult Function(Relative relative)? updateRelative,
+    TResult Function(Relative relative)? addRelatives,
+    TResult Function(String uuid)? deleteRelatives,
+    TResult Function(String location)? getLocation,
     required TResult orElse(),
   }) {
     if (getLocation != null) {
-      return getLocation();
+      return getLocation(location);
     }
     return orElse();
   }
@@ -692,11 +809,11 @@ class _$_GetLocation implements _GetLocation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GetRelatives value) getRelatives,
-    required TResult Function(_UpdateReltive value) updateRelative,
-    required TResult Function(_AddRelative value) addRelatives,
-    required TResult Function(_DeleteRelative value) deleteRelatives,
-    required TResult Function(_GetLocation value) getLocation,
+    required TResult Function(GetRelatives value) getRelatives,
+    required TResult Function(UpdateReltive value) updateRelative,
+    required TResult Function(AddRelative value) addRelatives,
+    required TResult Function(DeleteRelative value) deleteRelatives,
+    required TResult Function(GetLocation value) getLocation,
   }) {
     return getLocation(this);
   }
@@ -704,11 +821,11 @@ class _$_GetLocation implements _GetLocation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
   }) {
     return getLocation?.call(this);
   }
@@ -716,11 +833,11 @@ class _$_GetLocation implements _GetLocation {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetRelatives value)? getRelatives,
-    TResult Function(_UpdateReltive value)? updateRelative,
-    TResult Function(_AddRelative value)? addRelatives,
-    TResult Function(_DeleteRelative value)? deleteRelatives,
-    TResult Function(_GetLocation value)? getLocation,
+    TResult Function(GetRelatives value)? getRelatives,
+    TResult Function(UpdateReltive value)? updateRelative,
+    TResult Function(AddRelative value)? addRelatives,
+    TResult Function(DeleteRelative value)? deleteRelatives,
+    TResult Function(GetLocation value)? getLocation,
     required TResult orElse(),
   }) {
     if (getLocation != null) {
@@ -730,8 +847,13 @@ class _$_GetLocation implements _GetLocation {
   }
 }
 
-abstract class _GetLocation implements RelativesEvent {
-  const factory _GetLocation() = _$_GetLocation;
+abstract class GetLocation implements RelativesEvent {
+  const factory GetLocation(String location) = _$GetLocation;
+
+  String get location;
+  @JsonKey(ignore: true)
+  $GetLocationCopyWith<GetLocation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -742,24 +864,34 @@ class _$RelativesStateTearOff {
     return const _Initial();
   }
 
-  _RelativesLoaded relativesLoaded() {
-    return const _RelativesLoaded();
+  RelativesLoaded relativesLoaded(List<Relative> relatives) {
+    return RelativesLoaded(
+      relatives,
+    );
   }
 
-  _RelativeUpdated relativeUpdated() {
-    return const _RelativeUpdated();
+  RelativeUpdated relativeUpdated() {
+    return const RelativeUpdated();
   }
 
-  _RelativeAdded relativeAdded() {
-    return const _RelativeAdded();
+  RelativeAdded relativeAdded() {
+    return const RelativeAdded();
   }
 
-  _RelativeDeleted relativeDeleted() {
-    return const _RelativeDeleted();
+  RelativeDeleted relativeDeleted() {
+    return const RelativeDeleted();
   }
 
-  _LoationLoaded loationLoaded() {
-    return const _LoationLoaded();
+  LoationLoaded loationLoaded(List<Location> locations) {
+    return LoationLoaded(
+      locations,
+    );
+  }
+
+  Error error(String message) {
+    return Error(
+      message,
+    );
   }
 }
 
@@ -771,62 +903,68 @@ mixin _$RelativesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -888,11 +1026,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) {
     return initial();
   }
@@ -901,11 +1040,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) {
     return initial?.call();
   }
@@ -914,11 +1054,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -931,11 +1072,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) {
     return initial(this);
   }
@@ -944,11 +1086,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) {
     return initial?.call(this);
   }
@@ -957,11 +1100,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -976,82 +1120,109 @@ abstract class _Initial implements RelativesState {
 }
 
 /// @nodoc
-abstract class _$RelativesLoadedCopyWith<$Res> {
-  factory _$RelativesLoadedCopyWith(
-          _RelativesLoaded value, $Res Function(_RelativesLoaded) then) =
-      __$RelativesLoadedCopyWithImpl<$Res>;
+abstract class $RelativesLoadedCopyWith<$Res> {
+  factory $RelativesLoadedCopyWith(
+          RelativesLoaded value, $Res Function(RelativesLoaded) then) =
+      _$RelativesLoadedCopyWithImpl<$Res>;
+  $Res call({List<Relative> relatives});
 }
 
 /// @nodoc
-class __$RelativesLoadedCopyWithImpl<$Res>
+class _$RelativesLoadedCopyWithImpl<$Res>
     extends _$RelativesStateCopyWithImpl<$Res>
-    implements _$RelativesLoadedCopyWith<$Res> {
-  __$RelativesLoadedCopyWithImpl(
-      _RelativesLoaded _value, $Res Function(_RelativesLoaded) _then)
-      : super(_value, (v) => _then(v as _RelativesLoaded));
+    implements $RelativesLoadedCopyWith<$Res> {
+  _$RelativesLoadedCopyWithImpl(
+      RelativesLoaded _value, $Res Function(RelativesLoaded) _then)
+      : super(_value, (v) => _then(v as RelativesLoaded));
 
   @override
-  _RelativesLoaded get _value => super._value as _RelativesLoaded;
+  RelativesLoaded get _value => super._value as RelativesLoaded;
+
+  @override
+  $Res call({
+    Object? relatives = freezed,
+  }) {
+    return _then(RelativesLoaded(
+      relatives == freezed
+          ? _value.relatives
+          : relatives // ignore: cast_nullable_to_non_nullable
+              as List<Relative>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_RelativesLoaded implements _RelativesLoaded {
-  const _$_RelativesLoaded();
+class _$RelativesLoaded implements RelativesLoaded {
+  const _$RelativesLoaded(this.relatives);
+
+  @override
+  final List<Relative> relatives;
 
   @override
   String toString() {
-    return 'RelativesState.relativesLoaded()';
+    return 'RelativesState.relativesLoaded(relatives: $relatives)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RelativesLoaded);
+        (other.runtimeType == runtimeType &&
+            other is RelativesLoaded &&
+            const DeepCollectionEquality().equals(other.relatives, relatives));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(relatives));
+
+  @JsonKey(ignore: true)
+  @override
+  $RelativesLoadedCopyWith<RelativesLoaded> get copyWith =>
+      _$RelativesLoadedCopyWithImpl<RelativesLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) {
-    return relativesLoaded();
+    return relativesLoaded(relatives);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) {
-    return relativesLoaded?.call();
+    return relativesLoaded?.call(relatives);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (relativesLoaded != null) {
-      return relativesLoaded();
+      return relativesLoaded(relatives);
     }
     return orElse();
   }
@@ -1060,11 +1231,12 @@ class _$_RelativesLoaded implements _RelativesLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) {
     return relativesLoaded(this);
   }
@@ -1073,11 +1245,12 @@ class _$_RelativesLoaded implements _RelativesLoaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) {
     return relativesLoaded?.call(this);
   }
@@ -1086,11 +1259,12 @@ class _$_RelativesLoaded implements _RelativesLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (relativesLoaded != null) {
@@ -1100,33 +1274,38 @@ class _$_RelativesLoaded implements _RelativesLoaded {
   }
 }
 
-abstract class _RelativesLoaded implements RelativesState {
-  const factory _RelativesLoaded() = _$_RelativesLoaded;
+abstract class RelativesLoaded implements RelativesState {
+  const factory RelativesLoaded(List<Relative> relatives) = _$RelativesLoaded;
+
+  List<Relative> get relatives;
+  @JsonKey(ignore: true)
+  $RelativesLoadedCopyWith<RelativesLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$RelativeUpdatedCopyWith<$Res> {
-  factory _$RelativeUpdatedCopyWith(
-          _RelativeUpdated value, $Res Function(_RelativeUpdated) then) =
-      __$RelativeUpdatedCopyWithImpl<$Res>;
+abstract class $RelativeUpdatedCopyWith<$Res> {
+  factory $RelativeUpdatedCopyWith(
+          RelativeUpdated value, $Res Function(RelativeUpdated) then) =
+      _$RelativeUpdatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RelativeUpdatedCopyWithImpl<$Res>
+class _$RelativeUpdatedCopyWithImpl<$Res>
     extends _$RelativesStateCopyWithImpl<$Res>
-    implements _$RelativeUpdatedCopyWith<$Res> {
-  __$RelativeUpdatedCopyWithImpl(
-      _RelativeUpdated _value, $Res Function(_RelativeUpdated) _then)
-      : super(_value, (v) => _then(v as _RelativeUpdated));
+    implements $RelativeUpdatedCopyWith<$Res> {
+  _$RelativeUpdatedCopyWithImpl(
+      RelativeUpdated _value, $Res Function(RelativeUpdated) _then)
+      : super(_value, (v) => _then(v as RelativeUpdated));
 
   @override
-  _RelativeUpdated get _value => super._value as _RelativeUpdated;
+  RelativeUpdated get _value => super._value as RelativeUpdated;
 }
 
 /// @nodoc
 
-class _$_RelativeUpdated implements _RelativeUpdated {
-  const _$_RelativeUpdated();
+class _$RelativeUpdated implements RelativeUpdated {
+  const _$RelativeUpdated();
 
   @override
   String toString() {
@@ -1136,7 +1315,7 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RelativeUpdated);
+        (other.runtimeType == runtimeType && other is RelativeUpdated);
   }
 
   @override
@@ -1146,11 +1325,12 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) {
     return relativeUpdated();
   }
@@ -1159,11 +1339,12 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) {
     return relativeUpdated?.call();
   }
@@ -1172,11 +1353,12 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (relativeUpdated != null) {
@@ -1189,11 +1371,12 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) {
     return relativeUpdated(this);
   }
@@ -1202,11 +1385,12 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) {
     return relativeUpdated?.call(this);
   }
@@ -1215,11 +1399,12 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (relativeUpdated != null) {
@@ -1229,33 +1414,33 @@ class _$_RelativeUpdated implements _RelativeUpdated {
   }
 }
 
-abstract class _RelativeUpdated implements RelativesState {
-  const factory _RelativeUpdated() = _$_RelativeUpdated;
+abstract class RelativeUpdated implements RelativesState {
+  const factory RelativeUpdated() = _$RelativeUpdated;
 }
 
 /// @nodoc
-abstract class _$RelativeAddedCopyWith<$Res> {
-  factory _$RelativeAddedCopyWith(
-          _RelativeAdded value, $Res Function(_RelativeAdded) then) =
-      __$RelativeAddedCopyWithImpl<$Res>;
+abstract class $RelativeAddedCopyWith<$Res> {
+  factory $RelativeAddedCopyWith(
+          RelativeAdded value, $Res Function(RelativeAdded) then) =
+      _$RelativeAddedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RelativeAddedCopyWithImpl<$Res>
+class _$RelativeAddedCopyWithImpl<$Res>
     extends _$RelativesStateCopyWithImpl<$Res>
-    implements _$RelativeAddedCopyWith<$Res> {
-  __$RelativeAddedCopyWithImpl(
-      _RelativeAdded _value, $Res Function(_RelativeAdded) _then)
-      : super(_value, (v) => _then(v as _RelativeAdded));
+    implements $RelativeAddedCopyWith<$Res> {
+  _$RelativeAddedCopyWithImpl(
+      RelativeAdded _value, $Res Function(RelativeAdded) _then)
+      : super(_value, (v) => _then(v as RelativeAdded));
 
   @override
-  _RelativeAdded get _value => super._value as _RelativeAdded;
+  RelativeAdded get _value => super._value as RelativeAdded;
 }
 
 /// @nodoc
 
-class _$_RelativeAdded implements _RelativeAdded {
-  const _$_RelativeAdded();
+class _$RelativeAdded implements RelativeAdded {
+  const _$RelativeAdded();
 
   @override
   String toString() {
@@ -1265,7 +1450,7 @@ class _$_RelativeAdded implements _RelativeAdded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RelativeAdded);
+        (other.runtimeType == runtimeType && other is RelativeAdded);
   }
 
   @override
@@ -1275,11 +1460,12 @@ class _$_RelativeAdded implements _RelativeAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) {
     return relativeAdded();
   }
@@ -1288,11 +1474,12 @@ class _$_RelativeAdded implements _RelativeAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) {
     return relativeAdded?.call();
   }
@@ -1301,11 +1488,12 @@ class _$_RelativeAdded implements _RelativeAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (relativeAdded != null) {
@@ -1318,11 +1506,12 @@ class _$_RelativeAdded implements _RelativeAdded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) {
     return relativeAdded(this);
   }
@@ -1331,11 +1520,12 @@ class _$_RelativeAdded implements _RelativeAdded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) {
     return relativeAdded?.call(this);
   }
@@ -1344,11 +1534,12 @@ class _$_RelativeAdded implements _RelativeAdded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (relativeAdded != null) {
@@ -1358,33 +1549,33 @@ class _$_RelativeAdded implements _RelativeAdded {
   }
 }
 
-abstract class _RelativeAdded implements RelativesState {
-  const factory _RelativeAdded() = _$_RelativeAdded;
+abstract class RelativeAdded implements RelativesState {
+  const factory RelativeAdded() = _$RelativeAdded;
 }
 
 /// @nodoc
-abstract class _$RelativeDeletedCopyWith<$Res> {
-  factory _$RelativeDeletedCopyWith(
-          _RelativeDeleted value, $Res Function(_RelativeDeleted) then) =
-      __$RelativeDeletedCopyWithImpl<$Res>;
+abstract class $RelativeDeletedCopyWith<$Res> {
+  factory $RelativeDeletedCopyWith(
+          RelativeDeleted value, $Res Function(RelativeDeleted) then) =
+      _$RelativeDeletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RelativeDeletedCopyWithImpl<$Res>
+class _$RelativeDeletedCopyWithImpl<$Res>
     extends _$RelativesStateCopyWithImpl<$Res>
-    implements _$RelativeDeletedCopyWith<$Res> {
-  __$RelativeDeletedCopyWithImpl(
-      _RelativeDeleted _value, $Res Function(_RelativeDeleted) _then)
-      : super(_value, (v) => _then(v as _RelativeDeleted));
+    implements $RelativeDeletedCopyWith<$Res> {
+  _$RelativeDeletedCopyWithImpl(
+      RelativeDeleted _value, $Res Function(RelativeDeleted) _then)
+      : super(_value, (v) => _then(v as RelativeDeleted));
 
   @override
-  _RelativeDeleted get _value => super._value as _RelativeDeleted;
+  RelativeDeleted get _value => super._value as RelativeDeleted;
 }
 
 /// @nodoc
 
-class _$_RelativeDeleted implements _RelativeDeleted {
-  const _$_RelativeDeleted();
+class _$RelativeDeleted implements RelativeDeleted {
+  const _$RelativeDeleted();
 
   @override
   String toString() {
@@ -1394,7 +1585,7 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RelativeDeleted);
+        (other.runtimeType == runtimeType && other is RelativeDeleted);
   }
 
   @override
@@ -1404,11 +1595,12 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) {
     return relativeDeleted();
   }
@@ -1417,11 +1609,12 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) {
     return relativeDeleted?.call();
   }
@@ -1430,11 +1623,12 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (relativeDeleted != null) {
@@ -1447,11 +1641,12 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) {
     return relativeDeleted(this);
   }
@@ -1460,11 +1655,12 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) {
     return relativeDeleted?.call(this);
   }
@@ -1473,11 +1669,12 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (relativeDeleted != null) {
@@ -1487,87 +1684,114 @@ class _$_RelativeDeleted implements _RelativeDeleted {
   }
 }
 
-abstract class _RelativeDeleted implements RelativesState {
-  const factory _RelativeDeleted() = _$_RelativeDeleted;
+abstract class RelativeDeleted implements RelativesState {
+  const factory RelativeDeleted() = _$RelativeDeleted;
 }
 
 /// @nodoc
-abstract class _$LoationLoadedCopyWith<$Res> {
-  factory _$LoationLoadedCopyWith(
-          _LoationLoaded value, $Res Function(_LoationLoaded) then) =
-      __$LoationLoadedCopyWithImpl<$Res>;
+abstract class $LoationLoadedCopyWith<$Res> {
+  factory $LoationLoadedCopyWith(
+          LoationLoaded value, $Res Function(LoationLoaded) then) =
+      _$LoationLoadedCopyWithImpl<$Res>;
+  $Res call({List<Location> locations});
 }
 
 /// @nodoc
-class __$LoationLoadedCopyWithImpl<$Res>
+class _$LoationLoadedCopyWithImpl<$Res>
     extends _$RelativesStateCopyWithImpl<$Res>
-    implements _$LoationLoadedCopyWith<$Res> {
-  __$LoationLoadedCopyWithImpl(
-      _LoationLoaded _value, $Res Function(_LoationLoaded) _then)
-      : super(_value, (v) => _then(v as _LoationLoaded));
+    implements $LoationLoadedCopyWith<$Res> {
+  _$LoationLoadedCopyWithImpl(
+      LoationLoaded _value, $Res Function(LoationLoaded) _then)
+      : super(_value, (v) => _then(v as LoationLoaded));
 
   @override
-  _LoationLoaded get _value => super._value as _LoationLoaded;
+  LoationLoaded get _value => super._value as LoationLoaded;
+
+  @override
+  $Res call({
+    Object? locations = freezed,
+  }) {
+    return _then(LoationLoaded(
+      locations == freezed
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<Location>,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_LoationLoaded implements _LoationLoaded {
-  const _$_LoationLoaded();
+class _$LoationLoaded implements LoationLoaded {
+  const _$LoationLoaded(this.locations);
+
+  @override
+  final List<Location> locations;
 
   @override
   String toString() {
-    return 'RelativesState.loationLoaded()';
+    return 'RelativesState.loationLoaded(locations: $locations)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LoationLoaded);
+        (other.runtimeType == runtimeType &&
+            other is LoationLoaded &&
+            const DeepCollectionEquality().equals(other.locations, locations));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(locations));
+
+  @JsonKey(ignore: true)
+  @override
+  $LoationLoadedCopyWith<LoationLoaded> get copyWith =>
+      _$LoationLoadedCopyWithImpl<LoationLoaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() relativesLoaded,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
     required TResult Function() relativeUpdated,
     required TResult Function() relativeAdded,
     required TResult Function() relativeDeleted,
-    required TResult Function() loationLoaded,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
   }) {
-    return loationLoaded();
+    return loationLoaded(locations);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
   }) {
-    return loationLoaded?.call();
+    return loationLoaded?.call(locations);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? relativesLoaded,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
     TResult Function()? relativeUpdated,
     TResult Function()? relativeAdded,
     TResult Function()? relativeDeleted,
-    TResult Function()? loationLoaded,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (loationLoaded != null) {
-      return loationLoaded();
+      return loationLoaded(locations);
     }
     return orElse();
   }
@@ -1576,11 +1800,12 @@ class _$_LoationLoaded implements _LoationLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_RelativesLoaded value) relativesLoaded,
-    required TResult Function(_RelativeUpdated value) relativeUpdated,
-    required TResult Function(_RelativeAdded value) relativeAdded,
-    required TResult Function(_RelativeDeleted value) relativeDeleted,
-    required TResult Function(_LoationLoaded value) loationLoaded,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
   }) {
     return loationLoaded(this);
   }
@@ -1589,11 +1814,12 @@ class _$_LoationLoaded implements _LoationLoaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
   }) {
     return loationLoaded?.call(this);
   }
@@ -1602,11 +1828,12 @@ class _$_LoationLoaded implements _LoationLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_RelativesLoaded value)? relativesLoaded,
-    TResult Function(_RelativeUpdated value)? relativeUpdated,
-    TResult Function(_RelativeAdded value)? relativeAdded,
-    TResult Function(_RelativeDeleted value)? relativeDeleted,
-    TResult Function(_LoationLoaded value)? loationLoaded,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
     if (loationLoaded != null) {
@@ -1616,6 +1843,171 @@ class _$_LoationLoaded implements _LoationLoaded {
   }
 }
 
-abstract class _LoationLoaded implements RelativesState {
-  const factory _LoationLoaded() = _$_LoationLoaded;
+abstract class LoationLoaded implements RelativesState {
+  const factory LoationLoaded(List<Location> locations) = _$LoationLoaded;
+
+  List<Location> get locations;
+  @JsonKey(ignore: true)
+  $LoationLoadedCopyWith<LoationLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ErrorCopyWith<$Res> {
+  factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
+      _$ErrorCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class _$ErrorCopyWithImpl<$Res> extends _$RelativesStateCopyWithImpl<$Res>
+    implements $ErrorCopyWith<$Res> {
+  _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
+      : super(_value, (v) => _then(v as Error));
+
+  @override
+  Error get _value => super._value as Error;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(Error(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$Error implements Error {
+  const _$Error(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'RelativesState.error(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Error &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  $ErrorCopyWith<Error> get copyWith =>
+      _$ErrorCopyWithImpl<Error>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Relative> relatives) relativesLoaded,
+    required TResult Function() relativeUpdated,
+    required TResult Function() relativeAdded,
+    required TResult Function() relativeDeleted,
+    required TResult Function(List<Location> locations) loationLoaded,
+    required TResult Function(String message) error,
+  }) {
+    return error(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
+    TResult Function()? relativeUpdated,
+    TResult Function()? relativeAdded,
+    TResult Function()? relativeDeleted,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
+  }) {
+    return error?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Relative> relatives)? relativesLoaded,
+    TResult Function()? relativeUpdated,
+    TResult Function()? relativeAdded,
+    TResult Function()? relativeDeleted,
+    TResult Function(List<Location> locations)? loationLoaded,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(RelativesLoaded value) relativesLoaded,
+    required TResult Function(RelativeUpdated value) relativeUpdated,
+    required TResult Function(RelativeAdded value) relativeAdded,
+    required TResult Function(RelativeDeleted value) relativeDeleted,
+    required TResult Function(LoationLoaded value) loationLoaded,
+    required TResult Function(Error value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(RelativesLoaded value)? relativesLoaded,
+    TResult Function(RelativeUpdated value)? relativeUpdated,
+    TResult Function(RelativeAdded value)? relativeAdded,
+    TResult Function(RelativeDeleted value)? relativeDeleted,
+    TResult Function(LoationLoaded value)? loationLoaded,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Error implements RelativesState {
+  const factory Error(String message) = _$Error;
+
+  String get message;
+  @JsonKey(ignore: true)
+  $ErrorCopyWith<Error> get copyWith => throw _privateConstructorUsedError;
 }
