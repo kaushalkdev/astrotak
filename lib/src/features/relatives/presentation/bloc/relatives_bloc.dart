@@ -10,6 +10,7 @@ part 'relatives_bloc.freezed.dart';
 
 class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
   final RelativesUserCase _userCase;
+
   RelativesBloc(this._userCase) : super(const Initial()) {
     on<RelativesEvent>((event, emit) async {
       // getting initial value of realtives
@@ -29,6 +30,7 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
 
       // adding a relative
       else if (event is AddRelative) {
+        emit(const Initial());
         var _addResp = await _userCase.add(event.relative);
 
         _addResp.when(
@@ -43,6 +45,7 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
 
       // updateing a relative
       else if (event is UpdateReltive) {
+        emit(const Initial());
         var _updateResp = await _userCase.update(event.relative);
 
         _updateResp.when(
@@ -72,6 +75,7 @@ class RelativesBloc extends Bloc<RelativesEvent, RelativesState> {
 
       // getting locations for a particular entry
       else if (event is GetLocation) {
+        emit(const Initial());
         var _getLocResp = await _userCase.getLocation(event.location);
         _getLocResp.when(
           failure: (e) {

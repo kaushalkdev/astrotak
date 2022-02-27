@@ -27,4 +27,28 @@ class Relative {
     required this.relationId,
     this.middleName,
   });
+
+  Relative copyWith({
+    String? firstName,
+    String? lastName,
+    String? middleName,
+    String? relation,
+    String? fullName,
+    String? gender,
+    String? dateAndTimeOfBirth,
+    BirthDetails? birthDetails,
+    BirthPlace? birthPlace,
+  }) {
+    return Relative(
+        uuid: uuid,
+        relation: relation ?? this.relation,
+        firstName: firstName ?? this.firstName,
+        lastName: lastName ?? this.lastName,
+        fullName: fullName ?? this.fullName,
+        gender: gender ?? this.gender,
+        dateAndTimeOfBirth: dateAndTimeOfBirth ?? this.dateAndTimeOfBirth,
+        birthDetails: birthDetails ?? this.birthDetails,
+        birthPlace: birthPlace ?? this.birthPlace,
+        relationId: relationId);
+  }
 }

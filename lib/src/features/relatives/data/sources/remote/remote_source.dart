@@ -94,7 +94,8 @@ class RemoteSourceImplv1 implements RemoteSource {
   Future<Result<AppError, bool>> update(RelativeModel relativeModel) async {
     try {
       var _response = await _httpService.postRequestWithOptions(
-          AppApis.deleteRelative, relativeModel.toJson());
+          AppApis.updateRelative + '/${relativeModel.uuid}',
+          relativeModel.toJson());
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
         return Result.success(true);
       } else {
@@ -115,12 +116,15 @@ class RemoteSourceImplv1 implements RemoteSource {
       String location) async {
     List<LocationModel> _locations = [];
     try {
-      var _response = await _httpService.getRequest(AppApis.location);
+      var _response =
+          await _httpService.getRequest(AppApis.location + location);
       if (_response.data != null && _response.data['httpStatusCode'] == 200) {
-        for (var location
-            in (_response.data['data'] as List<Map<String, dynamic>>)) {
-          _locations.add(LocationModel.fromJson(location));
+        if ((_response.data as Map).containsKey('data')) {
+          for (var location in (_response.data['data'] as List)) {
+            _locations.add(LocationModel.fromJson(location));
+          }
         }
+
         return Result.success(_locations);
       } else {
         return Result.failure(AppError(

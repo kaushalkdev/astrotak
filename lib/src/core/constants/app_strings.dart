@@ -65,6 +65,27 @@ class AppString {
 
   static String deleteText = 'Do you really want to delete?';
 
+  static String save = 'Save Changes';
+
+  static String placeOfBirth = 'Place of Birth';
+
+  static String timeofbirth = 'Time of Birth';
+
+  static String dateOfBirth = 'Date of Birth';
+
+  static String gender = 'Gender';
+
+  static List<String> genderList = ['Male', 'Female'];
+
+  static List<String> relationList = [
+    'Father',
+    'Mother',
+    'Son',
+    'Daughter',
+    'Son in Law',
+    'Mother in Law'
+  ];
+
   //-----------------------------------------------------
 
 }

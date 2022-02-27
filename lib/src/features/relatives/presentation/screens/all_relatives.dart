@@ -1,9 +1,11 @@
 import 'package:astrotak/src/core/constants/app_strings.dart';
+import 'package:astrotak/src/core/services/di/locator.dart';
 import 'package:astrotak/src/core/widgets/app_button.dart';
 import 'package:astrotak/src/core/widgets/loader.dart';
 import 'package:astrotak/src/features/relatives/domain/entities/relative.dart';
+import 'package:astrotak/src/features/relatives/domain/use_cases/relatives_use_case.dart';
 import 'package:astrotak/src/features/relatives/presentation/bloc/relatives_bloc.dart';
-import 'package:astrotak/src/features/relatives/presentation/screens/edit_relative.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -81,6 +83,7 @@ class AllRelatives extends StatelessWidget {
       buildWhen: (previous, current) =>
           (current is RelativesLoaded || current is Initial),
       builder: (context, state) {
+        print(state);
         return state.maybeWhen(
           orElse: () => Container(),
           initial: () => _loading(),
@@ -91,10 +94,16 @@ class AllRelatives extends StatelessWidget {
                   _relativesList(relatives, context),
                   SafeArea(
                       child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AddNewRelative(),
+                    onPressed: () async {
+                      await Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => BlocProvider<RelativesBloc>(
+                          create: (context) =>
+                              RelativesBloc(getIt.get<RelativesUserCase>()),
+                          child: const AddNewRelative(),
+                        ),
                       ));
+
+                      context.read<RelativesBloc>().add(const GetRelatives());
                     },
                     child: Text(AppString.addProfile),
                   )),
@@ -156,6 +165,7 @@ class AllRelatives extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          const SizedBox(width: 5),
           _singleText(relative.firstName),
           _singleText(_dob(relative.dateAndTimeOfBirth), flex: 2),
           _singleText(_time(relative.dateAndTimeOfBirth), flex: 2),
@@ -178,7 +188,13 @@ class AllRelatives extends StatelessWidget {
             onTap: () {
               Navigator.of(_context).push(
                 MaterialPageRoute(
-                  builder: (context) => const EditRelative(),
+                  builder: (context) => BlocProvider<RelativesBloc>(
+                    create: (context) =>
+                        RelativesBloc(getIt.get<RelativesUserCase>()),
+                    child: AddNewRelative(
+                      relative: relative,
+                    ),
+                  ),
                 ),
               );
             },
