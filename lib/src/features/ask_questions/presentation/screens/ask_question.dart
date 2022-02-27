@@ -102,19 +102,29 @@ class AskQuestion extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           orElse: () => Container(),
-          categoryLoaded: (category) => DropdownButton<String>(
-            isExpanded: true,
-            value: context.watch<AskQuestionBloc>().selectedCategory,
-            items: category.map((String items) {
-              return DropdownMenuItem(
-                value: items,
-                child: Text(items),
-              );
-            }).toList(),
-            onChanged: (value) {
-              context.read<AskQuestionBloc>().add(SelectCategory(value!));
-              _controller.text = '';
-            },
+          categoryLoaded: (category) => Container(
+            margin: const EdgeInsets.only(left: 5, right: 15, top: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: const [BoxShadow(blurRadius: 2, color: Colors.grey)],
+            ),
+            child: DropdownButton<String>(
+              isExpanded: true,
+              underline: Container(),
+              value: context.watch<AskQuestionBloc>().selectedCategory,
+              items: category.map((String items) {
+                return DropdownMenuItem(
+                  value: items,
+                  child: Text(items),
+                );
+              }).toList(),
+              onChanged: (value) {
+                context.read<AskQuestionBloc>().add(SelectCategory(value!));
+                _controller.text = '';
+              },
+            ),
           ),
         );
       },
@@ -198,54 +208,55 @@ class AskQuestion extends StatelessWidget {
   }
 
   Widget _singleQuestion(String question, Function() ontap) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Row(
-            children: [
-              RotationTransition(
-                turns: const AlwaysStoppedAnimation(45 / 360),
-                child: Container(
-                  margin: const EdgeInsets.only(right: 15, top: 15),
-                  decoration: const BoxDecoration(
-                    color: Colors.deepOrange,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 5,
-                        spreadRadius: 1,
-                        color: Colors.grey,
-                      )
-                    ],
-                  ),
-                  height: 20,
-                  width: 20,
-                  child: const Icon(
-                    Icons.ac_unit,
-                    color: Colors.white,
-                    size: 15,
+    return GestureDetector(
+      onTap: ontap,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Row(
+              children: [
+                RotationTransition(
+                  turns: const AlwaysStoppedAnimation(45 / 360),
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 15, top: 15),
+                    decoration: const BoxDecoration(
+                      color: Colors.deepOrange,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          spreadRadius: 1,
+                          color: Colors.grey,
+                        )
+                      ],
+                    ),
+                    height: 20,
+                    width: 20,
+                    child: const Icon(
+                      Icons.ac_unit,
+                      color: Colors.white,
+                      size: 15,
+                    ),
                   ),
                 ),
-              ),
-              Flexible(child: Text(question)),
-            ],
+                Flexible(child: Text(question)),
+              ],
+            ),
           ),
-        ),
-        const Divider(
-          thickness: 1,
-          color: Colors.black38,
-        )
-      ],
+          const Divider(
+            thickness: 1,
+            color: Colors.black38,
+          )
+        ],
+      ),
     );
   }
 
   List<Widget> _buildQuestions(QuestionEntity questions, BuildContext context) {
     return questions.suggestions
-        .map(
-          (q) => _singleQuestion(q, () {
-            _controller.text = q;
-          }),
-        )
+        .map((q) => _singleQuestion(q, () {
+              _controller.text = q;
+            }))
         .toList();
   }
 
